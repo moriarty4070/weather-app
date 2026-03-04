@@ -1,0 +1,129 @@
+/* 1. Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* body {
+
+  background-color: #e0f2fe;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* THIS fixes the side-by-side issue! */
+/* justify-content: center;
+  align-items: center; } */
+
+body {
+  /* A fresh, soft sky-blue background */
+  background-color: #e0f2fe;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* THE MAGIC LINE: This tells the browser to smoothly fade any color change over 0.8 seconds */
+  transition: background-color 0.8s ease-in-out;
+}
+/* 2. Top Half: Search Container */
+#search-container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px 25px 15px 25px;
+  border-radius: 24px 24px 0 0; /* Rounds ONLY the top corners */
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  z-index: 2; /* Keeps a subtle shadow over the bottom half */
+}
+
+/* 3. Bottom Half: Weather Container */
+#weather-container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 25px 35px 25px;
+  border-radius: 0 0 24px 24px; /* Rounds ONLY the bottom corners */
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* 4. Fresh Input & Button */
+#search-input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f8fafc;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #38bdf8; /* Bright blue outline when typing */
+}
+
+#search-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background-color: #38bdf8; /* Fresh vibrant blue */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#search-btn:hover {
+  background-color: #0ea5e9; /* Slightly darker blue on hover */
+}
+
+#search-btn::after {
+  content: "Find"; /* Fills your empty button */
+}
+
+/* 5. Typography */
+#city-name {
+  font-size: 2.2rem;
+  color: #0f172a; /* Dark navy for strong contrast */
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+#temp {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #38bdf8; /* Matches the button */
+  margin: 5px 0;
+  line-height: 1;
+}
+
+#description {
+  /* Keeping your exact spelling */
+  font-size: 1.2rem;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+/* 6. Error Message */
+#error-message {
+  display: none; /* Hidden until we need it in JS */
+  background-color: #fee2e2;
+  color: #ef4444;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+img {
+  width: 100px;
+  z-index: 6;
+}

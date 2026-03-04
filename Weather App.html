@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="Weather App.css" />
+  </head>
+  <body>
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Enter city name..." />
+      <button id="search-btn">🔍</button>
+    </div>
+
+    <div id="weather-container">
+      <h2 id="city-name"></h2>
+      <img id="weather-icon" src="" alt="" />
+      <p id="temp"></p>
+      <p id="description"></p>
+      <p id="humidity"></p>
+      <p id="windSpead"></p>
+      <div id="error-message">
+        This location does not exist, try another one!
+      </div>
+    </div>
+    <script src="Weather-App.js"></script>
+  </body>
+</html>
